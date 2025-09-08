@@ -48,6 +48,7 @@ class SectionForm
                     RightGrid::make()->schema([
                         Section::make('Status')->icon(function (Get $get) {
                             $status = $get('status');
+
                             return $status == 0 ? Heroicon::OutlinedSun : Heroicon::Sun;
                         })->compact()
                             ->schema([
@@ -64,7 +65,7 @@ class SectionForm
                             //     return str()->of(Blade::render($record->viewPath, $record->variables))->toHtmlString();
                             // }),
                             Text::make('Coming soon'),
-                        ])
+                        ]),
                     ])->hiddenOn('create'),
                 ]),
             ]);

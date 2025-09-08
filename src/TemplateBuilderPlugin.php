@@ -10,7 +10,9 @@ use SmartCms\TemplateBuilder\Admin\Sections\SectionResource;
 class TemplateBuilderPlugin implements Plugin
 {
     public static ?string $navigationGroup = null;
+
     public static ?string $cluster = null;
+
     public function getId(): string
     {
         return 'template-builder';
@@ -34,6 +36,7 @@ class TemplateBuilderPlugin implements Plugin
     {
         static::$navigationGroup = $navigationGroup;
         static::$cluster = $cluster;
+
         return app(static::class);
     }
 

@@ -28,7 +28,6 @@ class SectionResource extends Resource
         return TemplateBuilderPlugin::$cluster ?? null;
     }
 
-
     public static function getModelLabel(): string
     {
         return __('template-builder::admin.section');
@@ -37,6 +36,7 @@ class SectionResource extends Resource
     public static function getNavigationGroup(): ?string
     {
         return null;
+
         return __(TemplateBuilderPlugin::$navigationGroup);
     }
 

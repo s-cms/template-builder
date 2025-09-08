@@ -7,7 +7,6 @@ use Filament\Resources\Pages\EditRecord;
 use SmartCms\Support\Admin\Components\Actions\SaveAction;
 use SmartCms\Support\Admin\Components\Actions\SaveAndClose;
 use SmartCms\TemplateBuilder\Admin\Layouts\LayoutResource;
-use SmartCms\TemplateBuilder\Admin\Sections\SectionResource;
 use SmartCms\TemplateBuilder\TemplateBuilderPlugin;
 
 class EditLayout extends EditRecord
@@ -22,6 +21,7 @@ class EditLayout extends EditRecord
                 $additionalItems = array_merge($additionalItems, $component::getNavigationItems());
             }
         }
+
         return array_merge(parent::getSubNavigation(), $additionalItems);
     }
 

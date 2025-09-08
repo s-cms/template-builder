@@ -28,7 +28,7 @@ class LayoutForm
                                 TextInput::make('name')
                                     ->label(__('template-builder::admin.name'))
                                     ->required(),
-                                TextInput::make('path')->disabled()
+                                TextInput::make('path')->disabled(),
                             ])->columns(2),
                             Grid::make(2)
                                 ->schema(function () use ($form): array {
@@ -46,7 +46,7 @@ class LayoutForm
                             //     return str()->of(Blade::render($record->viewPath, $record->variables))->toHtmlString();
                             // }),
                             Text::make('Coming soon'),
-                        ])
+                        ]),
                         // ->columnSpanFull(),
                         // Section::make([
                         //     TextEntry::make('created_at')->inlineLabel()->since(),

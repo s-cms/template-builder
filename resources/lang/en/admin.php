@@ -13,5 +13,5 @@ return [
     'active' => 'Active',
     'inactive' => 'Inactive',
     'preview' => 'Preview',
-    'show' => 'show'
+    'show' => 'show',
 ];
