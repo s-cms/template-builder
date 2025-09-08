@@ -7,10 +7,28 @@ use Filament\Resources\Pages\EditRecord;
 use SmartCms\Support\Admin\Components\Actions\SaveAction;
 use SmartCms\Support\Admin\Components\Actions\SaveAndClose;
 use SmartCms\TemplateBuilder\Admin\Layouts\LayoutResource;
+use SmartCms\TemplateBuilder\Admin\Sections\SectionResource;
+use SmartCms\TemplateBuilder\TemplateBuilderPlugin;
 
 class EditLayout extends EditRecord
 {
     protected static string $resource = LayoutResource::class;
+
+    public function getSubNavigation(): array
+    {
+        $additionalItems = [];
+        if (TemplateBuilderPlugin::$cluster) {
+            foreach (TemplateBuilderPlugin::$cluster::getClusteredComponents() as $component) {
+                $additionalItems = array_merge($additionalItems, $component::getNavigationItems());
+            }
+        }
+        return array_merge(parent::getSubNavigation(), $additionalItems);
+    }
+
+    public static function getCluster(): ?string
+    {
+        return TemplateBuilderPlugin::$cluster;
+    }
 
     protected function getHeaderActions(): array
     {

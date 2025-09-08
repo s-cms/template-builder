@@ -12,4 +12,6 @@ return [
     'status' => 'Status',
     'active' => 'Active',
     'inactive' => 'Inactive',
+    'preview' => 'Preview',
+    'show' => 'show'
 ];

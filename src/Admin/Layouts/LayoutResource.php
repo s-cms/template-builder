@@ -24,6 +24,11 @@ class LayoutResource extends Resource
 
     protected static ?int $navigationSort = 2;
 
+    public static function getCluster(): ?string
+    {
+        return TemplateBuilderPlugin::$cluster ?? null;
+    }
+
     public static function getModelLabel(): string
     {
         return __('template-builder::admin.layout');
@@ -31,6 +36,7 @@ class LayoutResource extends Resource
 
     public static function getNavigationGroup(): ?string
     {
+        return null;
         return __(TemplateBuilderPlugin::$navigationGroup);
     }
 
