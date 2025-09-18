@@ -13,14 +13,14 @@ trait HasVariables
     public function schema(): Attribute
     {
         return new Attribute(
-            get: fn () => TemplateParser::make(static::getTemplateType())->getComponentSchema($this->path)
+            get: fn() => TemplateParser::make(static::getTemplateType())->getComponentSchema($this->path)
         );
     }
 
     public function variables(): Attribute
     {
         return new Attribute(
-            get: fn () => TemplateParser::make(static::getTemplateType())->getComponentVariables($this->path, $this->mutateValue($this->value))
+            get: fn() => TemplateParser::make(static::getTemplateType())->getComponentVariables($this->path, $this->mutateValue($this->value))
         );
     }
 
@@ -38,8 +38,12 @@ trait HasVariables
         if (! is_array($value)) {
             $value = [];
         }
+        $templateData = $value;
+        if (empty($templateData)) {
+            $templateData = $this->value ?? [];
+        }
 
-        return TemplateParser::make(static::getTemplateType())->getComponentVariables($this->path, $value ?? $this->value ?? []);
+        return TemplateParser::make(static::getTemplateType())->getComponentVariables($this->path, $templateData);
     }
 
     public function viewPath(): Attribute

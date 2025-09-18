@@ -36,8 +36,6 @@ class LayoutResource extends Resource
 
     public static function getNavigationGroup(): ?string
     {
-        return null;
-
         return __(TemplateBuilderPlugin::$navigationGroup);
     }
 

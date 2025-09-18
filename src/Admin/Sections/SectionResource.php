@@ -35,8 +35,6 @@ class SectionResource extends Resource
 
     public static function getNavigationGroup(): ?string
     {
-        return null;
-
         return __(TemplateBuilderPlugin::$navigationGroup);
     }
 
