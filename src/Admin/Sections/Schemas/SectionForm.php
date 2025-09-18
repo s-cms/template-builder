@@ -32,7 +32,9 @@ class SectionForm
                             TextInput::make('name')
                                 ->label(__('template-builder::admin.name'))
                                 ->required(),
-                            Select::make('path')->options($components->pluck('name', 'path')->toArray())->required()->live()->disabledOn('edit'),
+                            Select::make('path')
+                                ->label(__('template-builder::admin.template_path'))
+                                ->options($components->pluck('name', 'path')->toArray())->required()->live()->disabledOn('edit'),
                         ])->columns(2)->columnSpan(1),
                         Grid::make(1)
                             ->schema(function (Get $get): array {

@@ -145,7 +145,11 @@ class VariableTypeRegistry
         try {
             return $type->getValue($value);
         } catch (\Exception $e) {
-            Log::debug('Error getting value for variable ' . $name . ' with type ' . $type::getName() . ' and value ' . $value . ' with error ' . $e->getMessage(), [
+            Log::debug('Error getting value for variable', [
+                'name' => $name,
+                'type' => $type::getName(),
+                'value' => $value,
+                'error' => $e->getMessage(),
                 'trace' => $e->getTraceAsString(),
             ]);
 

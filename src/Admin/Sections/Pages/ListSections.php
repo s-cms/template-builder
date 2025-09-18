@@ -14,6 +14,11 @@ class ListSections extends ListRecords
 {
     protected static string $resource = SectionResource::class;
 
+    protected function getHeaderWidgets(): array
+    {
+        return [];
+    }
+
     protected function getHeaderActions(): array
     {
         return [
@@ -23,7 +28,15 @@ class ListSections extends ListRecords
 
                 return [
                     TextInput::make('name')->required(),
-                    Select::make('path')->options($components->pluck('name', 'path')->toArray())->required()->live(),
+                    Select::make('path')
+                        ->label(__('template-builder::admin.template_path'))
+                        ->options(
+                            $components
+                                ->pluck('name', 'path')
+                                ->toArray()
+                        )
+                        ->required()
+                        ->live(),
                 ];
             }),
         ];

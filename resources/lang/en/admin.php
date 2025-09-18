@@ -14,4 +14,5 @@ return [
     'inactive' => 'Inactive',
     'preview' => 'Preview',
     'show' => 'show',
+    'template_path' => 'Template (path)',
 ];
