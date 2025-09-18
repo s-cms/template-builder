@@ -8,6 +8,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Resources\Pages\ListRecords;
 use SmartCms\TemplateBuilder\Actions\TemplateParser;
 use SmartCms\TemplateBuilder\Admin\Sections\SectionResource;
+use SmartCms\TemplateBuilder\Admin\Widgets\SectionInfoWidget;
 use SmartCms\TemplateBuilder\Support\TemplateTypeEnum;
 
 class ListSections extends ListRecords
@@ -16,7 +17,9 @@ class ListSections extends ListRecords
 
     protected function getHeaderWidgets(): array
     {
-        return [];
+        return [
+            SectionInfoWidget::class,
+        ];
     }
 
     protected function getHeaderActions(): array

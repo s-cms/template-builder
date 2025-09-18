@@ -159,6 +159,16 @@ class VariableTypeRegistry
 
     public function getLabelFromName(string $name): string
     {
+        $translationKey = "variables.{$name}";
+
+        // Check if translation exists, otherwise use formatted name
+        $translation = trans($translationKey);
+
+        if ($translation !== $translationKey) {
+            return $translation;
+        }
+
+        // Fallback to formatted name
         return str($name)->replace('_', ' ')->ucfirst()->toString();
     }
 

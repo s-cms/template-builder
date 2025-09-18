@@ -12,6 +12,7 @@ use SmartCms\TemplateBuilder\Admin\Sections\Pages\EditSection;
 use SmartCms\TemplateBuilder\Admin\Sections\Pages\ListSections;
 use SmartCms\TemplateBuilder\Admin\Sections\Schemas\SectionForm;
 use SmartCms\TemplateBuilder\Admin\Sections\Tables\SectionsTable;
+use SmartCms\TemplateBuilder\Admin\Widgets\SectionInfoWidget;
 use SmartCms\TemplateBuilder\Models\Section as ModelsSection;
 use SmartCms\TemplateBuilder\TemplateBuilderPlugin;
 
@@ -59,6 +60,13 @@ class SectionResource extends Resource
             'index' => ListSections::route('/'),
             // 'create' => CreateSection::route('/create'),
             'edit' => EditSection::route('/{record}/edit'),
+        ];
+    }
+
+    public static function getWidgets(): array
+    {
+        return [
+            SectionInfoWidget::class,
         ];
     }
 }
