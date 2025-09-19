@@ -2,7 +2,6 @@
 
 namespace SmartCms\TemplateBuilder\Actions;
 
-use Illuminate\Support\Facades\Artisan;
 use Lorisleiva\Actions\Concerns\AsAction;
 use SmartCms\TemplateBuilder\Models\Layout;
 use SmartCms\TemplateBuilder\Support\TemplateTypeEnum;
