@@ -42,6 +42,9 @@ trait HasVariables
         if (empty($templateData)) {
             $templateData = $this->value ?? [];
         }
+        if (!is_array($templateData)) {
+            $templateData = [];
+        }
 
         return TemplateParser::make(static::getTemplateType())->getComponentVariables($this->path, $templateData);
     }
