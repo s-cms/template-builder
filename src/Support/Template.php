@@ -47,6 +47,9 @@ class Template
     {
         return <<<'blade'
                 @foreach ($template as $section)
+                @if(!$section->section || $section->section->status === false)
+                @continue
+                @endif
                     @include($section->section->view_path, $section->section->variables)
                 @endforeach
         blade;

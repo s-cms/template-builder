@@ -8,22 +8,25 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
+use Illuminate\Contracts\Database\Eloquent\Builder;
 
 class SectionsTable
 {
     public static function configure(Table $table): Table
     {
         return $table
-            ->defaultSort('updated_at', 'desc')
+            ->defaultSort(function (Builder $query) {
+                return $query->orderByRaw('name,path,created_at desc');
+            })
             ->columns([
-                TextColumn::make('name')->label(__('template-builder::admin.name')),
+                TextColumn::make('name')->label(__('template-builder::admin.name'))->searchable(),
                 ToggleColumn::make('status')->label(__('template-builder::admin.status')),
-                TextColumn::make('updated_at')->translateLabel()
+                TextColumn::make('created_at')->translateLabel()
                     ->dateTime()
                     ->sortable()
                     ->since()
                     ->toggleable(isToggledHiddenByDefault: false),
-                TextColumn::make('created_at')->translateLabel()
+                TextColumn::make('updated_at')->translateLabel()
                     ->dateTime()
                     ->sortable()
                     ->since()
