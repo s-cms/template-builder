@@ -21,4 +21,5 @@ return [
     'total_section_templates_found' => 'Total templates found in filesystem',
     'templates_in_use' => 'Templates currently in use',
     'templates_not_used' => 'Templates not being used',
+    'used_times' => 'Used times',
 ];

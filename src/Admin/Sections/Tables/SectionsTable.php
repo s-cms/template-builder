@@ -9,6 +9,7 @@ use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Contracts\Database\Eloquent\Builder;
+use SmartCms\TemplateBuilder\Models\Section;
 
 class SectionsTable
 {
@@ -21,6 +22,11 @@ class SectionsTable
             ->columns([
                 TextColumn::make('name')->label(__('template-builder::admin.name'))->searchable(),
                 ToggleColumn::make('status')->label(__('template-builder::admin.status')),
+                TextColumn::make('used_times')->getStateUsing(function (Section $record) {
+                    return $record->templates()->count();
+                })->label(__('template-builder::admin.used_times'))->badge()->color(function ($state) {
+                    return $state > 0 ? 'success' : 'gray';
+                })->toggleable(isToggledHiddenByDefault: false),
                 TextColumn::make('created_at')->translateLabel()
                     ->dateTime()
                     ->sortable()

@@ -21,4 +21,5 @@ return [
     'total_section_templates_found' => 'Łączna liczba szablonów znalezionych w systemie plików',
     'templates_in_use' => 'Szablony obecnie w użyciu',
     'templates_not_used' => 'Szablony nieużywane',
+    'used_times' => 'Używane razy',
 ];

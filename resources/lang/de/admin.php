@@ -21,4 +21,5 @@ return [
     'total_section_templates_found' => 'Gesamtzahl der im Dateisystem gefundenen Vorlagen',
     'templates_in_use' => 'Derzeit verwendete Vorlagen',
     'templates_not_used' => 'Nicht verwendete Vorlagen',
+    'used_times' => 'Verwendete Mal',
 ];
