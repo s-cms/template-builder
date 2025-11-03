@@ -14,9 +14,6 @@ use Filament\Schemas\Schema;
 use Illuminate\Support\Facades\Log;
 use InvalidArgumentException;
 use SmartCms\TemplateBuilder\VariableTypes\ArrayType;
-use SmartCms\TemplateBuilder\VariableTypes\BoolType;
-use SmartCms\TemplateBuilder\VariableTypes\HtmlType;
-use SmartCms\TemplateBuilder\VariableTypes\TextType;
 
 class VariableTypeRegistry
 {
@@ -24,13 +21,7 @@ class VariableTypeRegistry
 
     public bool $shouldThrowError = true;
 
-    public function __construct()
-    {
-        $this->register(TextType::class);
-        $this->register(BoolType::class);
-        $this->register(ArrayType::class);
-        $this->register(HtmlType::class);
-    }
+    public function __construct() {}
 
     public function register(string $class): void
     {
