@@ -24,7 +24,7 @@ class ArrayType implements VariableTypeInterface
         return [];
     }
 
-    public function getSchema(string $name): Field | Component
+    public function getSchema(string $name, ?string $language = null): Field | Component
     {
         return Repeater::make($name)->columns(2);
     }

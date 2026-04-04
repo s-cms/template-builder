@@ -24,7 +24,7 @@ class BoolType implements VariableTypeInterface
         return false;
     }
 
-    public function getSchema(string $name): Field | Component
+    public function getSchema(string $name, ?string $language = null): Field | Component
     {
         return Toggle::make($name);
     }
