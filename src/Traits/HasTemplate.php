@@ -2,6 +2,7 @@
 
 namespace SmartCms\TemplateBuilder\Traits;
 
+use Illuminate\Database\Eloquent\Relations\MorphOne;
 use SmartCms\TemplateBuilder\Models\Template;
 
 /**
@@ -12,7 +13,7 @@ trait HasTemplate
     /**
      * Get the template relationship.
      *
-     * @return \Illuminate\Database\Eloquent\Relations\MorphOne
+     * @return MorphOne
      */
     public function template()
     {

@@ -56,7 +56,7 @@ class VariableTypeRegistry
         $type = $this->get($type);
         if (! $type) {
             if ($this->shouldThrowError) {
-                throw new \InvalidArgumentException("Invalid type for variable $name");
+                throw new InvalidArgumentException("Invalid type for variable $name");
             }
 
             return null;
@@ -100,7 +100,7 @@ class VariableTypeRegistry
         $type = $this->get($type);
         if (! $type) {
             if ($this->shouldThrowError) {
-                throw new \InvalidArgumentException("Invalid type for variable $name");
+                throw new InvalidArgumentException("Invalid type for variable $name");
             }
 
             return null;
