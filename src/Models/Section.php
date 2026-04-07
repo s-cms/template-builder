@@ -2,6 +2,7 @@
 
 namespace SmartCms\TemplateBuilder\Models;
 
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use SmartCms\TemplateBuilder\Support\TemplateTypeEnum;
@@ -19,7 +20,7 @@ use Spatie\Translatable\HasTranslations;
  * @property array $value The values for the section.
  * @property \DateTime $created_at The date and time when the model was created.
  * @property \DateTime $updated_at The date and time when the model was last updated.
- * @property-read \Illuminate\Database\Eloquent\Collection|\SmartCms\TemplateBuilder\Models\Template[] $templates The templates using this section.
+ * @property-read Collection|Template[] $templates The templates using this section.
  */
 class Section extends Model
 {

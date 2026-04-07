@@ -17,7 +17,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $entity_id The ID of the entity this template belongs to.
  * @property \DateTime $created_at The date and time when the model was created.
  * @property \DateTime $updated_at The date and time when the model was last updated.
- * @property-read \SmartCms\TemplateBuilder\Models\Section $section The template section.
+ * @property-read Section $section The template section.
  * @property-read mixed $entity The entity this template belongs to.
  */
 class Template extends Model

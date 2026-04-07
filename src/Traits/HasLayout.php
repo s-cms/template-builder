@@ -4,6 +4,7 @@ namespace SmartCms\TemplateBuilder\Traits;
 
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphOne;
 use SmartCms\TemplateBuilder\Actions\TemplateParser;
 use SmartCms\TemplateBuilder\Models\Layout;
 use SmartCms\TemplateBuilder\Support\TemplateTypeEnum;
@@ -28,7 +29,7 @@ trait HasLayout
     /**
      * Get the template relationship.
      *
-     * @return \Illuminate\Database\Eloquent\Relations\MorphOne
+     * @return MorphOne
      */
     public function layout()
     {

@@ -13,7 +13,7 @@ interface VariableTypeInterface
 
     public function getDefaultValue(): mixed;
 
-    public function getSchema(string $name): Field | Component;
+    public function getSchema(string $name, ?string $language = null): Field | Component;
 
     public function getValue(mixed $value): mixed;
 }

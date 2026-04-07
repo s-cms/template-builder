@@ -24,7 +24,7 @@ class HtmlType implements VariableTypeInterface
         return $this->mutateString('<b>Default HTML</b>');
     }
 
-    public function getSchema(string $name): Field | Component
+    public function getSchema(string $name, ?string $language = null): Field | Component
     {
         return RichEditor::make($name)
             ->columnSpanFull()
